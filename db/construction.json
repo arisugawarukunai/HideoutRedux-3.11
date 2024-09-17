@@ -1451,7 +1451,7 @@
         "bonuses": [
           {
             "id": "66e3aba0a2de538486c0b631",
-            "value": 2,
+            "value": 8,
             "passive": true,
             "production": false,
             "visible": true,
@@ -1534,7 +1534,7 @@
           },
           {
             "id": "66e3aba0807d35def3ce775a",
-            "value": 5,
+            "value": 20,
             "passive": true,
             "production": false,
             "visible": true,
@@ -1637,7 +1637,7 @@
           },
           {
             "id": "66e3aba0cab57d0c4433d4b2",
-            "value": 8,
+            "value": 32,
             "passive": true,
             "production": false,
             "visible": true,
@@ -1755,7 +1755,7 @@
           },
           {
             "id": "66e3aba0b3408c22ba918b72",
-            "value": 2,
+            "value": 10,
             "passive": true,
             "production": false,
             "visible": true,
@@ -1862,7 +1862,7 @@
           },
           {
             "id": "66e3aba05e0e08c01db04a86",
-            "value": 5,
+            "value": 15,
             "passive": true,
             "production": false,
             "visible": true,
@@ -1955,7 +1955,7 @@
           },
           {
             "id": "66e3aba0683ecf44119627e6",
-            "value": 8,
+            "value": 25,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2048,7 +2048,7 @@
           },
           {
             "id": "66e35a1be18a2cae27ffa5f0",
-            "value": 1,
+            "value": 5,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2154,7 +2154,7 @@
           },
           {
             "id": "66e35a1b42334757b31835f6",
-            "value": 3,
+            "value": 15,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2162,7 +2162,7 @@
           },
           {
             "id": "66e3aba0b25a33fae8611c90",
-            "value": 2,
+            "value": 8,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2254,7 +2254,7 @@
           },
           {
             "id": "66e35a1b3a4204aa458f65c3",
-            "value": 6,
+            "value": 34,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2262,7 +2262,7 @@
           },
           {
             "id": "66e3aba03a0ae314937893db",
-            "value": 3,
+            "value": 12,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2378,7 +2378,7 @@
           },
           {
             "id": "66e3aba0568e4506475dbb3f",
-            "value": 1,
+            "value": 5,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2386,7 +2386,7 @@
           },
           {
             "id": "66e3aba030461b475c6b5c70",
-            "value": 1,
+            "value": 2,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2513,7 +2513,7 @@
           },
           {
             "id": "66e3aba0864fef80373834d7",
-            "value": 3,
+            "value": 15,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2521,7 +2521,7 @@
           },
           {
             "id": "66e3aba0d149f532f97de292",
-            "value": 3,
+            "value": 6,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2640,7 +2640,7 @@
           },
           {
             "id": "66e3aba09b695fef888ec9e9",
-            "value": 6,
+            "value": 35,
             "passive": true,
             "production": false,
             "visible": true,
@@ -2648,7 +2648,7 @@
           },
           {
             "id": "66e3aba091f49ac21c0d26c5",
-            "value": 6,
+            "value": 12,
             "passive": true,
             "production": false,
             "visible": true,
@@ -4492,7 +4492,7 @@
           },
           {
             "id": "66e3aba01d858d80f06c7241",
-            "value": 5,
+            "value": 10,
             "passive": true,
             "production": false,
             "visible": true,
