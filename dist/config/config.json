@@ -1,0 +1,9 @@
+{ 
+  "verboseLogging": false,
+  "hoursForSkillCrafting": 10800,
+  "expCraftAmount": 30,
+  "generatorSpeedWithoutFuel": 0.11,
+  "generatorFuelFlowRate": 0.0008796296296296,
+  "airFilterUnitFlowRate": 0.0031481481481481,
+  "gpuBoostRate": 0.061
+}
