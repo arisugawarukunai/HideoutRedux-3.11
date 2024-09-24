@@ -3,7 +3,6 @@ import path from "node:path"
 import { jsonc } from "jsonc"
 import { VFS } from "@spt/utils/VFS"
 
-// import this.modConfig from "../config/config.json"
 import construction from "../db/construction.json"
 import locales from "../db/locales.json"
 import scavCase from "../db/scavcase.json"
@@ -19,7 +18,7 @@ import { ConfigTypes } from "@spt/models/enums/ConfigTypes"
 import { IHideoutConfig } from '@spt/models/spt/config/IHideoutConfig'
 import { LocaleService } from '@spt/services/LocaleService'
 
-class Mod implements IPostDBLoadMod
+class Mod implements IPostDBLoadMod, IPostSptLoadMod
 {
   private modTitle = `Hideout Redux`
   private logger = container.resolve<ILogger>("WinstonLogger")
@@ -42,7 +41,7 @@ class Mod implements IPostDBLoadMod
         {
           if (setting == value)
           {
-            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Old DB setting: ${setting} = ${dbTables.hideout.settings[setting]}`,LogTextColor.GRAY)}
+            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Current hideout database value for ${setting} is ${dbTables.hideout.settings[setting]}`,LogTextColor.GRAY)}
             dbTables.hideout.settings[setting] = this.modConfig.settings[value]
             if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Adjusted to ${dbTables.hideout.settings[setting]}`,LogTextColor.CYAN)}
           }
@@ -74,11 +73,34 @@ class Mod implements IPostDBLoadMod
     // Set new hideout bonuses
     if (this.modConfig.bonusChanges)
     {
-      construction.forEach(areaMod =>
+      if (this.modConfig.useDefaultStashSizeBonus)
       {
-        dbTables.hideout.areas.forEach(area =>
+        construction.forEach(areaMod =>
         {
-          if (area.type != 3)
+          dbTables.hideout.areas.forEach(area =>
+          {
+            if (area.type != 3)
+            {
+              if (area._id == areaMod._id)
+              {
+                for (const stage in area.stages)
+                {
+                  if (stage != "0")
+                  {
+                    area.stages[stage].bonuses = areaMod.stages[stage].bonuses
+                    if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated ${areaMod.area} level ${stage} to include ${area.stages[stage].bonuses.length} total bonuses.`,LogTextColor.CYAN)}
+                  }
+                }
+              }
+            }
+          })
+        })
+      }
+      else
+      {
+        construction.forEach(areaMod =>
+        {
+          dbTables.hideout.areas.forEach(area =>
           {
             if (area._id == areaMod._id)
             {
@@ -91,9 +113,9 @@ class Mod implements IPostDBLoadMod
                 }
               }
             }
-          }
+          })
         })
-      })
+      }
       if(!this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Set new hideout level bonuses`,LogTextColor.CYAN)}
     }// End hideout bonus changes
     // Set new hideout construction times
@@ -199,8 +221,9 @@ class Mod implements IPostDBLoadMod
         {
           if (config == value)
           {
-            hideoutConfig[config] = this.modConfig[value]
-            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Adjusted config entry ${config} to ${hideoutConfig[config]}`,LogTextColor.CYAN)}
+            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}:Current hideout config value for  ${config} is ${hideoutConfig[config]}`,LogTextColor.GRAY)}
+            hideoutConfig[config] = this.modConfig.config[value]
+            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Adjusted to ${hideoutConfig[config]}`,LogTextColor.CYAN)}
           }
         }
       }

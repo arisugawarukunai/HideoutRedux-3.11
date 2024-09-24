@@ -29,5 +29,10 @@
   },
   // IF YOU DISABLE BONUS CHANGES, BUT WANT TO KEEP THE 
   // GENERATOR FILTER CHANGE, SET TO TRUE
-  "generatorFuelChangeOnly": false// Only modifies generator fuel slots(Level 1: Kerosene, Level 2: Gasoline, Level 3: Both)
+  "generatorFuelChangeOnly": false,// Only modifies generator fuel slots(Level 1: Kerosene, Level 2: Gasoline, Level 3: Both)
+
+  // IF YOU ARE USING ANOTHER MOD THAT CHANGES STASH SIZES
+  // OR WANT TO KEEP THE DEFAULTS FOR ANY OTHER REASON, LEAVE AS TRUE
+  // IF YOU WANT EACH STAGE TO BE 1 LEVEL HIGHER THAN DEFAULT, SET TO FALSE
+  "useDefaultStashSizeBonus": true
 }
