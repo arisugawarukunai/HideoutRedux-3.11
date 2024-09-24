@@ -1,0 +1,33 @@
+{ 
+  "verboseLogging": false,// Setting to true will provide info for EVERY change made
+  //
+  // Comments denoting default values are referring to the default SPT values
+  //
+  "changeConfigValues": true,// Modifies the below values in SPT_Data/Server/configs/hideout.json
+  "config": {
+    "hoursForSkillCrafting": 10800,// Default: 28800(seconds)
+    "expCraftAmount": 30// Default: 10
+  },
+  //
+  "changeSettingsValues": true,// Modifies the below values in SPT_Data/Server/database/hideout/settings.json
+  "settings": {
+    "generatorSpeedWithoutFuel": 0.105,// Default: 0.07, 150% of default value
+    "generatorFuelFlowRate": 0.0008796296296296,// Default: 0.0013194444444444, 66.6667% of default value
+    "airFilterUnitFlowRate": 0.0031481481481481,// Default: 0.0047222222222222, 66.6667% of default value
+    "gpuBoostRate": 0.0618375// Default: 0.041225, 150% of default value
+  },
+  //
+  "includeLocaleChanges": true,// Modifies locales to fit "new" hideout changes
+  "requirementChanges": true,// Modifies all hideout construction requirements
+  "bonusChanges": true,// Modifies all hideout level bonuses
+  "constructionTimeChanges": true,// Adjusts all construction times to better fit requirements and stage
+  "modifyScavCase": true,// Modifies payment and rewards for Scav Case hideout area
+  "scavCaseChanges":{
+    "prodTime": true,
+    "requirements": true,
+    "rewards": true
+  },
+  // IF YOU DISABLE BONUS CHANGES, BUT WANT TO KEEP THE 
+  // GENERATOR FILTER CHANGE, SET TO TRUE
+  "generatorFuelChangeOnly": false// Only modifies generator fuel slots(Level 1: Kerosene, Level 2: Gasoline, Level 3: Both)
+}
