@@ -36,14 +36,15 @@ class Mod implements IPostDBLoadMod
     // Apply changes to spt_data/server/hideout/settings
     if (this.modConfig.changeSettingsValues)
     {
-      for (const value in this.modConfig)
+      for (const value in this.modConfig.settings)
       {
         for (const setting in dbTables.hideout.settings)
         {
           if (setting == value)
           {
+            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Old DB setting: ${setting} = ${dbTables.hideout.settings[setting]}`,LogTextColor.GRAY)}
             dbTables.hideout.settings[setting] = this.modConfig.settings[value]
-            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Adjusted DB setting ${setting} to ${dbTables.hideout.settings[setting]}`,LogTextColor.CYAN)}
+            if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Adjusted to ${dbTables.hideout.settings[setting]}`,LogTextColor.CYAN)}
           }
         }
       }
@@ -77,14 +78,17 @@ class Mod implements IPostDBLoadMod
       {
         dbTables.hideout.areas.forEach(area =>
         {
-          if (area._id == areaMod._id)
+          if (area.type != 3)
           {
-            for (const stage in area.stages)
+            if (area._id == areaMod._id)
             {
-              if (stage != "0")
+              for (const stage in area.stages)
               {
-                area.stages[stage].bonuses = areaMod.stages[stage].bonuses
-                if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated ${areaMod.area} level ${stage} to include ${area.stages[stage].bonuses.length} total bonuses.`,LogTextColor.CYAN)}
+                if (stage != "0")
+                {
+                  area.stages[stage].bonuses = areaMod.stages[stage].bonuses
+                  if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated ${areaMod.area} level ${stage} to include ${area.stages[stage].bonuses.length} total bonuses.`,LogTextColor.CYAN)}
+                }
               }
             }
           }

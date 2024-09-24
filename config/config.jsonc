@@ -1,5 +1,5 @@
 { 
-  "verboseLogging": false,// Setting to true will provide info for EVERY change made
+  "verboseLogging": true,// Setting to true will provide info for EVERY change made
   //
   // Comments denoting default values are referring to the default SPT values
   //
