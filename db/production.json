@@ -10,8 +10,7 @@
           "count": 1,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Area",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Area"
         },
         {
           "areaType": 11,
@@ -20,8 +19,7 @@
           "count": 1,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Area",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Area"
         },
         {
           "areaType": 0,
@@ -30,8 +28,7 @@
           "count": 2,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Item",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Item"
         },
         {
           "areaType": 0,
@@ -40,8 +37,7 @@
           "count": 2,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Item",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Item"
         },
         {
           "areaType": 0,
@@ -50,8 +46,7 @@
           "count": 1,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Item",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Item"
         },
         {
           "areaType": 0,
@@ -60,8 +55,7 @@
           "count": 4,
           "isFunctional": false,
           "isEncoded": false,
-          "type": "Item",
-          "questId": "5936d90786f7742b1420ba5b"
+          "type": "Item"
         }
       ],
       "productionTime": 3600,
