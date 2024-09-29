@@ -34,5 +34,8 @@
   // IF YOU ARE USING ANOTHER MOD THAT CHANGES STASH SIZES
   // OR WANT TO KEEP THE DEFAULTS FOR ANY OTHER REASON, LEAVE AS TRUE
   // IF YOU WANT EACH STAGE TO BE 1 LEVEL HIGHER THAN DEFAULT, SET TO FALSE
-  "useDefaultStashSizeBonus": true
+  "useDefaultStashSizeBonus": true,
+
+  // Toggles modified crafting recipes
+  "enableProductionChanges": true
 }

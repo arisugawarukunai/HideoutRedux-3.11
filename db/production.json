@@ -1,0 +1,77 @@
+[
+    {
+      "_id": "358358bc281d769df969d846",
+      "areaType": 10,
+      "requirements": [
+        {
+          "areaType": 10,
+          "requiredLevel": 3,
+          "templateId": "5755383e24597772cb798966",
+          "count": 1,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Area",
+          "questId": "5936d90786f7742b1420ba5b"
+        },
+        {
+          "areaType": 11,
+          "requiredLevel": 2,
+          "templateId": "5755383e24597772cb798966",
+          "count": 1,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Area",
+          "questId": "5936d90786f7742b1420ba5b"
+        },
+        {
+          "areaType": 0,
+          "requiredLevel": 1,
+          "templateId": "5857a8b324597729ab0a0e7d",
+          "count": 2,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Item",
+          "questId": "5936d90786f7742b1420ba5b"
+        },
+        {
+          "areaType": 0,
+          "requiredLevel": 1,
+          "templateId": "59fb042886f7746c5005a7b2",
+          "count": 2,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Item",
+          "questId": "5936d90786f7742b1420ba5b"
+        },
+        {
+          "areaType": 0,
+          "requiredLevel": 1,
+          "templateId": "590c60fc86f77412b13fddcf",
+          "count": 1,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Item",
+          "questId": "5936d90786f7742b1420ba5b"
+        },
+        {
+          "areaType": 0,
+          "requiredLevel": 1,
+          "templateId": "62a0a16d0b9d3c46de5b6e97",
+          "count": 4,
+          "isFunctional": false,
+          "isEncoded": false,
+          "type": "Item",
+          "questId": "5936d90786f7742b1420ba5b"
+        }
+      ],
+      "productionTime": 3600,
+      "needFuelForAllProductionTime": false,
+      "locked": false,
+      "endProduct": "5857a8bc2459772bad15db29",
+      "continuous": false,
+      "count": 1,
+      "productionLimitCount": 0,
+      "isEncoded": false,
+      "isCodeProduction": false
+    }
+]
