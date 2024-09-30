@@ -133,7 +133,8 @@ class Mod implements IPostDBLoadMod, IPostSptLoadMod
             {
               if (stage != "0")
               {
-                area.stages[stage].constructionTime = areaMod.stages[stage].constructionTime
+                area.stages[stage].constructionTime = Math.round(areaMod.stages[stage].constructionTime * this.modConfig.constructionTimeModifier)
+                
                 if(this.modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated ${areaMod.area} level ${stage} construction time to ${area.stages[stage].constructionTime}.`,LogTextColor.CYAN)}
               }
             }
