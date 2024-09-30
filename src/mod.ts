@@ -6,6 +6,7 @@ import { VFS } from "@spt/utils/VFS"
 import construction from "../db/construction.json"
 import locales from "../db/locales.json"
 import scavCase from "../db/scavcase.json"
+import production from "../db/production.json"
 
 import { ILogger } from "@spt/models/spt/utils/ILogger"
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor"
@@ -17,6 +18,7 @@ import { ConfigServer } from "@spt/servers/ConfigServer"
 import { ConfigTypes } from "@spt/models/enums/ConfigTypes"
 import { IHideoutConfig } from '@spt/models/spt/config/IHideoutConfig'
 import { LocaleService } from '@spt/services/LocaleService'
+import { IHideoutProduction } from "@spt/models/eft/hideout/IHideoutProduction"
 
 class Mod implements IPostDBLoadMod, IPostSptLoadMod
 {
@@ -208,6 +210,12 @@ class Mod implements IPostDBLoadMod, IPostSptLoadMod
         }
       })
     }// End fuel changes
+    // Import our new productions from productions.json
+    if (this.modConfig.enableProductionChanges) {
+      // Doing this so that TS will yell at us if the json is wack
+      const productionData: IHideoutProduction[] = production;
+      dbTables.hideout.production.push(...productionData);
+    }// End production importing
   }
   public postSptLoad(container: DependencyContainer): void
   {
