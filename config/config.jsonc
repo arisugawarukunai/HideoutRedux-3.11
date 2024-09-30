@@ -21,6 +21,7 @@
   "requirementChanges": true,// Modifies all hideout construction requirements
   "bonusChanges": true,// Modifies all hideout level bonuses
   "constructionTimeChanges": true,// Adjusts all construction times to better fit requirements and stage
+  "constructionTimeModifier": 1.0,//------> (REQUIRES ABOVE SETTING TO BE TRUE) <------------- Further customization of construction times.
   "modifyScavCase": true,// Modifies payment and rewards for Scav Case hideout area
   "scavCaseChanges":{
     "prodTime": true,
