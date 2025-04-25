@@ -1,0 +1,31 @@
+{
+  "verboseLogging": false,
+  "changeCraftConfigValues": true,
+  "craftConfig": {
+     "hoursForSkillCrafting": 10800,
+     "expCraftAmount": 30
+  },
+  "changeConsumptionConfigValues": true,
+  "consumptionConfig": {
+     "generatorSpeedWithoutFuel": 0.105,
+     "generatorFuelFlowRate": 0.0008796296296296,
+     "airFilterUnitFlowRate": 0.0031481481481481,
+     "gpuBoostRate": 0.0618375
+  },
+  "constructionTimeChanges": false,
+  "constructionConfig": {
+     "constructionTimeModifier": 1
+  },
+  "modifyScavCase": false,
+  "scavCaseChanges": {
+     "prodTime": true,
+     "requirements": true,
+     "rewards": true
+  },
+  "includeLocaleChanges": true,
+  "requirementChanges": true,
+  "productionChanges": false,
+  "bonusChanges": true,
+  "generatorFuelChangeOnly": false,
+  "useDefaultStashSizeBonus": true
+}
