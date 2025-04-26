@@ -2,8 +2,8 @@ import { container, DependencyContainer } from "tsyringe"
 
 import construction from "../db/construction.json"
 import locales from "../db/locales.json"
-// import scavCase from "../db/scavcase.json"
-// import production from "../db/production.json"
+import scavCase from "../db/scavcase.json"
+import production from "../db/production.json"
 import modConfig from "../config/config.json";
 
 import { ILogger } from "@spt/models/spt/utils/ILogger"
@@ -16,7 +16,7 @@ import { ConfigServer } from "@spt/servers/ConfigServer"
 import { ConfigTypes } from "@spt/models/enums/ConfigTypes"
 import { IHideoutConfig } from '@spt/models/spt/config/IHideoutConfig'
 import { LocaleService } from '@spt/services/LocaleService'
-// import { IHideoutProduction } from "@spt/models/eft/hideout/IHideoutProduction"
+import { IHideoutProduction, IScavRecipe } from "@spt/models/eft/hideout/IHideoutProduction"
 
 
 class Mod implements IPostDBLoadMod, IPostSptLoadMod
@@ -146,46 +146,23 @@ class Mod implements IPostDBLoadMod, IPostSptLoadMod
       if(!modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Set new hideout construction times`,LogTextColor.CYAN)}
     }// End construction time changes
     
-    /*
-    /// QUARANTINE: Backend changes seem to have put scav case and production RECIPES on the {dbTables.hideout.production.recipes} and {dbTables.hideout.production.scavRecipes}.
-    ///   What will I do with that information? I do not know, we will find out later.
-    ///   For now, this is quarantined: should not be deleted, and is due for later review, but isn't impeditive to 1.1.3 update of the mod.
-    /// 
-    
     // Update scav case payments and rewards
     if (modConfig.modifyScavCase)
     {
-      scavCase.forEach(newPayment =>
-      {
-        dbTables.hideout.scavcase.forEach(payment =>
-        {
-          if (payment._id == newPayment._id)
-          {
-            // Update requirements
-            if (modConfig.scavCaseChanges.requirements)
-            {
-              payment.Requirements = newPayment.Requirements
-              if(modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Changed Scav Case payment to ${payment.Requirements[0].templateId}`,LogTextColor.CYAN)}
-            }
-            // Update production time
-            if (modConfig.scavCaseChanges.prodTime)
-            {
-              payment.ProductionTime = newPayment.ProductionTime
-              if(modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Production time changed for Scav Case payment ${payment.Requirements[0].templateId}`,LogTextColor.CYAN)}
-            }
-            // Update end products
-            if (modConfig.scavCaseChanges.rewards)
-            {
-              payment.EndProducts = newPayment.EndProducts
-              if(modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Reward changed for Scav Case payment ${payment.Requirements[0].templateId}`,LogTextColor.CYAN)}
-            }
-          }
-        })
-      })
+      // Doing this so that TS will yell at us if the json is wack
+      const scavCaseChanges: IScavRecipe[] = scavCase;
+      dbTables.hideout.production.scavRecipes = scavCaseChanges;
       if(!modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated Scav Case hideout area`,LogTextColor.CYAN)}
     }//End scav case changes
-    */
 
+    // Import our new productions from productions.json
+    if (modConfig.productionChanges) {
+      // Doing this so that TS will yell at us if the json is wack
+      const productionData: IHideoutProduction[] = production;
+      dbTables.hideout.production.recipes.push(...productionData);
+      if(!modConfig.verboseLogging){this.logger.logWithColor(`${this.modTitle}: Updated hideout production`,LogTextColor.CYAN)}
+    }// End production importing
+    
     // Update locales to reflect "new" hideout
     if (modConfig.includeLocaleChanges)
     {
@@ -224,19 +201,6 @@ class Mod implements IPostDBLoadMod, IPostSptLoadMod
       })
     }// End fuel changes
     
-    /*
-    /// QUARANTINE: Backend changes seem to have put scav case and production RECIPES on the {dbTables.hideout.production.recipes} and {dbTables.hideout.production.scavRecipes}.
-    ///   What will I do with that information? I do not know, we will find out later.
-    ///   For now, this is quarantined: should not be deleted, and is due for later review, but isn't impeditive to 1.1.3 update of the mod.
-    /// 
-    
-    // Import our new productions from productions.json
-    if (modConfig.productionChanges) {
-      // Doing this so that TS will yell at us if the json is wack
-      const productionData: IHideoutProduction[] = production;
-      dbTables.hideout.production.push(...productionData);
-    }// End production importing
-    */
   }
   public postSptLoad(container: DependencyContainer): void
   {
