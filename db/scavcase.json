@@ -1,8 +1,8 @@
 [
   {
     "_id": "6271093e621b0a76055cd61e",
-    "ProductionTime": 28800,
-    "Requirements": [
+    "productionTime": 28800,
+    "requirements": [
       {
         "templateId": "59faff1d86f7746c51718c9c",
         "count": 1,
@@ -11,7 +11,7 @@
         "type": "Item"
       }
     ],
-    "EndProducts": {
+    "endProducts": {
       "Common": {
         "min": 0,
         "max": 2
@@ -28,8 +28,8 @@
   },
   {
     "_id": "62710a8c403346379e3de9be",
-    "ProductionTime": 21600,
-    "Requirements": [
+    "productionTime": 21600,
+    "requirements": [
       {
         "templateId": "5d1b376e86f774252519444e",
         "count": 1,
@@ -38,7 +38,7 @@
         "type": "Item"
       }
     ],
-    "EndProducts": {
+    "endProducts": {
       "Common": {
         "min": 0,
         "max": 3
@@ -55,8 +55,8 @@
   },
   {
     "_id": "62710974e71632321e5afd5f",
-    "ProductionTime": 14400,
-    "Requirements": [
+    "productionTime": 14400,
+    "requirements": [
       {
         "templateId": "5d403f9186f7743cac3f229b",
         "count": 1,
@@ -65,7 +65,7 @@
         "type": "Item"
       }
     ],
-    "EndProducts": {
+    "endProducts": {
       "Common": {
         "min": 0,
         "max": 2
@@ -82,8 +82,8 @@
   },
   {
     "_id": "62710a0e436dcc0b9c55f4ec",
-    "ProductionTime": 7200,
-    "Requirements": [
+    "productionTime": 7200,
+    "requirements": [
       {
         "templateId": "5d40407c86f774318526545a",
         "count": 1,
@@ -92,7 +92,7 @@
         "type": "Item"
       }
     ],
-    "EndProducts": {
+    "endProducts": {
       "Common": {
         "min": 0,
         "max": 2
@@ -109,8 +109,8 @@
   },
   {
     "_id": "62710a69adfbd4354d79c58e",
-    "ProductionTime": 3600,
-    "Requirements": [
+    "productionTime": 3600,
+    "requirements": [
       {
         "templateId": "5734770f24597738025ee254",
         "count": 4,
@@ -119,7 +119,7 @@
         "type": "Item"
       }
     ],
-    "EndProducts": {
+    "endProducts": {
       "Common": {
         "min": 4,
         "max": 6

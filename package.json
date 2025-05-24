@@ -1,10 +1,12 @@
 {
     "name": "Hideout Redux",
-    "version": "1.1.2",
-    "sptVersion": "3.9.8",
+    "version": "1.1.4",
+    "sptVersion": "3.11.3",
     "main": "src/mod.js",
     "author": "MAGICERASER",
-    "contributors": [],
+    "contributors": [
+        "Arisu-sensei"
+    ],
     "license": "CC BY-NC-ND 4.0",
     "loadBefore": [],
     "loadAfter": [],
